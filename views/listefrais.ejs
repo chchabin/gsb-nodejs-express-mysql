@@ -1,0 +1,23 @@
+<% include listemois%>
+<h3>Fiche de frais du mois <%= numMois %>-<%= numAnnee %> :
+</h3>
+<div class="encadre">
+    <p>
+        Etat : <strong><%= libEtat %> depuis le <%= dateModif %> </strong>
+        <br> Montant validé : <strong><%= montantValide %> </strong>
+    </p>
+    <table class="listeLegere">
+        <caption>Eléments forfaitisés </caption>
+        <tr>
+            <%for(unFraisForfait of lesFraisForfait){%>
+            <th> <%=unFraisForfait['libelle']%> </th>
+            <%}%>
+        </tr>
+        <tr>
+            <%for(unFraisForfait of lesFraisForfait){%>
+            <td class="qteForfait"><%= unFraisForfait['quantite'] %>
+            </td>
+            <%}%>
+        </tr>
+    </table>
+</div>

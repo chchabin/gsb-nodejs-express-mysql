@@ -1,0 +1,34 @@
+<% include sommaire %>
+<div id="contenu">
+    <h2>Renseigner ma fiche de frais du mois <%= numMois %> -<%= numAnnee %></h2>
+    <div class="erreur"><%= message %></div>
+    <form method="post" action="/sauvegarderFrais">
+        <div class="corpsForm">
+            <fieldset>
+                <legend>Eléments forfaitisés</legend>
+                <% for (const frais of lesFrais) { %>
+                <p>
+                    <input type="hidden" name="lesLibFrais[]"
+
+                           value="<%= frais.libelle %>">
+
+                    <label for="<%= frais.libelle %>">
+                        <%= frais.libelle %>
+                    </label>
+                    <input type="text" required
+                           id="<%= frais.libelle %>"
+                           name="<%= frais.idfrais %>"
+                           value="<%= frais.quantite %>">
+
+                </p>
+                <% } %>
+            </fieldset>
+        </div>
+        <div class="piedForm">
+            <p>
+                <input id="ok" type="submit" value="Valider" size="20"/>
+                <input id="annuler" type="reset" value="Annuler" size="20"/>
+            </p>
+        </div>
+    </form>
+</div>

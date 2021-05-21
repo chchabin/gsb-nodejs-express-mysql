@@ -1,0 +1,23 @@
+POST http://127.0.0.1:3000/connexion
+Content-Type: application/json
+
+{
+    "login":"aribia",
+    "mdp":"aaaa"
+}
+###
+POST http://127.0.0.1:3000/sauvegarderFrais
+Content-Type: application/json
+
+{
+  "login":"aribia",
+  "prenom":"aaaa",
+  "leMois": "202103",
+"lesMois": [
+   { "mois": "202103" },
+   { "mois": "202011" },
+   { "mois": "202010" }
+  ]
+
+
+}
